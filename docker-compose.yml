@@ -1,0 +1,14 @@
+version: '3.1'
+services:
+  portainer:
+    image: koray2021/chatgpt-pandora:latest
+    container_name: pandoraGPT
+    restart: unless-stopped
+    environment:
+      PANDORA_CLOUD: "cloud"
+      PANDORA_SERVER: "0.0.0.0:8899"
+    volumes:
+      - ./data:/data
+      - /etc/localtime:/etc/localtime
+    ports:
+      - 8899:8899
